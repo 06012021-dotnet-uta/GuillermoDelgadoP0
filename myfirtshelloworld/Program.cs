@@ -12,7 +12,7 @@ namespace myfirtshelloworld
             Console.WriteLine("Enter your name");
             string name = Console.ReadLine();
             Console.WriteLine("Enter your age");
-            string age = Console.ReadLine();
+            int age = int.Parse(Console.ReadLine());
 
             Console.WriteLine($"My name is {name} and age {age}");
         }
