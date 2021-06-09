@@ -16,6 +16,7 @@ namespace RockPaperScissors
         public Player player;
         public Computer computer;
 
+
         //Default Constructor
         public Game(){
             this.computer = new Computer();
