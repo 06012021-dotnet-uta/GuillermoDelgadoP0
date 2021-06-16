@@ -41,8 +41,10 @@ namespace RockPaperScissors
 
             if(addPlayer(name, rounds)){
                 System.Console.WriteLine($"Player {player.name} is in the game...");
+               
             }else{
                 System.Console.WriteLine("Somthing went wrong in addplayer method....");
+               
             }
 
         }
