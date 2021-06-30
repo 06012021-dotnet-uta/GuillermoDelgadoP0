@@ -1,0 +1,62 @@
+﻿
+<!--this is the model stringly types to this view --> 
+@model ModelsLibary.CustomerModel
+
+@{
+    ViewData["Title"] = "CreateNewCustomer";
+}
+
+<h1>Create New Customer</h1>
+
+<h4>Just Register in Seconds</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateNewCustomer"><!--This denote the action that the form will be sent to-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="form-group">
+                <label asp-for="Customer_FName" class="control-label" ></label>
+                <input asp-for="Customer_FName" class="form-control />
+                <span asp-validation-for="Customer_FName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_LName" class="control-label"></label>
+                <input asp-for="Customer_LName" class="form-control" />
+                <span asp-validation-for="Customer_LName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_Address" class="control-label"></label>
+                <input asp-for="Customer_Address" class="form-control" />
+                <span asp-validation-for="Customer_Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_City" class="control-label"></label>
+                <input asp-for="Customer_City" class="form-control" />
+                <span asp-validation-for="Customer_City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_State" class="control-label"></label>
+                <input asp-for="Customer_State" class="form-control" />
+                <span asp-validation-for="Customer_State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back","Index","Home")
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

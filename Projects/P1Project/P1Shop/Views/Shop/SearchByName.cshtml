@@ -1,0 +1,63 @@
+﻿@model ModelsLibary.CustomerModel
+
+@{
+    ViewData["Title"] = "SearchByName";
+}
+
+<h1>Search By First Name</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-action="SearchForCustomer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Customer_FName" class="control-label"></label>
+                <input asp-for="Customer_FName" class="form-control" />
+                <span asp-validation-for="Customer_FName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<h1>Search By First and Last Name</h1>
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-action="SearchForCustomerFL">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Customer_FName" class="control-label"></label>
+                <input asp-for="Customer_FName" class="form-control" />
+                <span asp-validation-for="Customer_FName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Customer_LName" class="control-label"></label>
+                <input asp-for="Customer_LName" class="form-control" />
+                <span asp-validation-for="Customer_FName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    
+    @Html.ActionLink("Main Menu","Main","Shop")
+
+</div>
+

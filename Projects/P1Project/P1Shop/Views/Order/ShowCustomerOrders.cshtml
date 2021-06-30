@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ModelsLibary.OrderModel>
+
+@{
+    ViewData["Title"] = "ShowCustomerOrders";
+}
+
+<h1>ShowCustomerOrders</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Purchase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Total_Purchase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeDate)
+            </td>
+            <td>
+               
+                @Html.ActionLink("Order Details", "OrderDetails","OrderDetails", item) 
+                
+            </td>
+        </tr>
+}
+            @Html.ActionLink("Back Main","Main","Shop" ) 
+    </tbody>
+</table>

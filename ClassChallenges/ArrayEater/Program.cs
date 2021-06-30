@@ -8,14 +8,14 @@ namespace ArrayEater
         public static int maxPoss(){
             //this is default output. You can changeit.
             int result = -404;
-           const int N = 5;
+           const int N = 12;
             //write your logic here
-            int[] A = new int[N]{2,6,4,9,3};
+            int[] A = new int[N]{3, 6 ,0 ,6, 12, 16, 11, 8, 7, 9, 2 ,10}; //output 75 not 90
 
            var rand = new Random();
 
-           int K = 2; //rand.Next(0, N);
-           int P = 1; //rand.Next(0, (N - K));
+           int K = 3; //rand.Next(0, N);
+           int P = 7; //rand.Next(0, (N - K));
            Console.WriteLine("K = " + K);
            Console.WriteLine("P = " + P);
 

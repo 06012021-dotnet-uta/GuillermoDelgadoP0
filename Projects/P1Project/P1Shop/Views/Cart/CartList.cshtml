@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ModelsLibary.CartModel>
+
+@{
+    ViewData["Title"] = "CartList";
+
+    decimal total = 0;
+}
+
+<h1>CartList</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOne.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOne.Product_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOne.Product_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOne.Product_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOne.Product_Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                 @item.ProductOne.ProductId
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductOne.Product_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductOne.Product_Description)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.ProductOne.Product_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductOne.Product_Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                    @{    
+                        total += item.quantity * item.ProductOne.Product_Price;
+                    }
+               
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        } 
+        <p><b>Total Amount:</b>$@total</p>
+        @Html.ActionLink("Main", "Main","Shop") |
+        @Html.ActionLink("CheckOut","SetOrder","Cart")
+    </tbody>     
+</table>

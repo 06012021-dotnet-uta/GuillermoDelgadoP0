@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ModelsLibary.OrderDetailModel>
+
+@{
+    ViewData["Title"] = "OrderDetails";
+    decimal total = 0;
+}
+
+<h1>OrderDetails</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Obtain_Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Qty_Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Obtain_Qty)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Total_Qty_Price)
+            </td>
+            <td>
+                  @{    
+                        total += item.Total_Qty_Price;
+                   }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p><b>Total Amount:</b>$@total</p>

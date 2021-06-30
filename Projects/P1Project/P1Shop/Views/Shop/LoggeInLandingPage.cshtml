@@ -1,0 +1,20 @@
+﻿
+@{
+
+    ViewData["Title"] = "Store Dashboard";
+}
+
+ <h1>@ViewData["Title"]</h1>
+
+<h3> @ViewData["Welcome"]@Model.Customer_FName Account:</h3>
+
+
+<container>
+    <div>
+              <button class="btn-info"><a class="btn" asp-area="" asp-controller="Shop" asp-action="ShowCustomerList">Show Customer List</a></button>
+              <button class="btn-info"><a class="btn" asp-area="" asp-controller="Shop" asp-action="SearchByName">Search Customer</a></button>
+              <button class="btn-info"><a class="btn" asp-area="" asp-controller="Store" asp-action="ShowStoreList">Stores List</a></button>
+              <button class="btn-info"><a class="btn" asp-area="" asp-controller="Order" asp-action="ShowCustomerOrders">Show Orders</a></button>
+               
+    </div>
+</container>

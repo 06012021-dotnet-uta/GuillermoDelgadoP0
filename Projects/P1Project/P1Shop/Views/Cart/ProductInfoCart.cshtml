@@ -1,0 +1,71 @@
+﻿@model ModelsLibary.CartModel
+
+@{
+    ViewData["Title"] = "ProductInfoCart";
+}
+
+<h1>ProductInfoCart</h1>
+
+<h4>CartModel</h4>
+<hr />
+
+<div>
+    <h4>Customer Information: (Verify your information!!)</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2" >
+            @Html.DisplayNameFor(model => model.ProductOne.Product_Name)
+        </dt>
+        <dd class = "col-sm-10" >
+            @Html.DisplayFor(model => model.ProductOne.Product_Name)
+        </dd>
+        <dt class = "col-sm-2" >
+            @Html.DisplayNameFor(model => model.ProductOne.Product_Description)
+        </dt>
+        <dd class = "col-sm-10" >
+            @Html.DisplayFor(model => model.ProductOne.Product_Description)
+        </dd>
+        <dt class = "col-sm-2" >
+            @Html.DisplayNameFor(model => model.ProductOne.Product_Price)
+        </dt>
+        <dd class = "col-sm-10" >
+            @Html.DisplayFor(model => model.ProductOne.Product_Price)
+        </dd>
+        <dt class = "col-sm-2" >
+            @Html.DisplayNameFor(model => model.ProductOne.Product_Stock)
+        </dt>
+        <dd class = "col-sm-10" >
+            @Html.DisplayFor(model => model.ProductOne.Product_Stock)
+        </dd>
+       
+    </dl>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <input type="hidden" asp-for="ProductOne.ProductId" class="form-control" readonly="@(true)"/>
+                <input type="hidden" asp-for="ProductOne.Product_Name" class="form-control" readonly="@(true)"/>
+                <input type="hidden" asp-for="ProductOne.Product_Description" class="form-control" readonly="@(true)"/>
+                <input type="hidden" asp-for="ProductOne.Product_Price" class="form-control" readonly="@(true)"/>
+                <input type="hidden" asp-for="ProductOne.Product_Stock" class="form-control" readonly="@(true)"/>
+                <input type="hidden" asp-for="ProductOne.LocationId" class="form-control" readonly="@(true)"/>
+
+                <label asp-for="quantity" class="control-label"><b>Quantity:</b></label>
+                <input asp-for="quantity" class="form-control" min="0" max="100"/>
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="BuyNow!" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   
+</div>
+
