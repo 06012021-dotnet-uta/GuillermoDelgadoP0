@@ -2,28 +2,30 @@
 
 ## Project Description
 
-Here goes your awesome project description!
+This is a ASP.NET Core MVC project utilizing Entity Framework Core to create a Web Store Application that allows a user to create an account then view orders by user and store location. The user can create an order, view their order history, and view the order history of a store location.
 
 ## Technologies Used
 
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+*  .Net Core - version 5.07 
+*  ASP.Net  
+*  MVC Framework 
+*  SQL Server
+*  C#
 
 ## Features
 
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Users can register themselves and be able to search other users.
+* User can select a store, see the information of the store and looks orders made in that particular store.
+* Users can choose a particular store and make a order of diferent products.
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Include for future a better UI.
+* More Unit testing.
 
 ## Getting Started
    
-(include git clone command)
+git clone 
 (include all environment setup steps)
 
 > Be sure to include BOTH Windows and Unix command  
