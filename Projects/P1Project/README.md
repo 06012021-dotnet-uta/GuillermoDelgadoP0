@@ -1,4 +1,4 @@
-# PROJECT NAME
+# SHOP APP
 
 ## Project Description
 
