@@ -29,9 +29,9 @@ namespace P1Shop
         public void ConfigureServices(IServiceCollection services)//========> services object i need it to create a service for me, since contex is a service
         {
             services.AddControllersWithViews();
+            
             services.AddDbContext<ShopDB>(options =>
             {
-
                 if (!options.IsConfigured)//if option are not configure create the DB. This mock the db 
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));//create a DataBase but 
