@@ -25,14 +25,14 @@ def collatz(number) -> int:
 
     # while result == 1:            # It would not print the number 1 without this loop
     #     print(result) 
-    #     #sys.exit(x)                # So 1 is not printed forever.
+    #     #sys.exit(x)              # So 1 is not printed forever.
 
     
 
     # while result != 1:            # Goes through this loop until the condition in the previous one is True.
     #     print(result)
     #     number = result
-    #     collatz(number)          # This makes it so collatz() is called with the number it has previously evaluated down to.
+    #     collatz(number)           # This makes it so collatz() is called with the number it has previously evaluated down to.
               
         
                                     # Program starts here!
@@ -40,7 +40,7 @@ def collatz(number) -> int:
 try:
    
     print('Enter number A: ')
-    numberA = int(input())           # ERROR! if a text string or float is input.
+    numberA = int(input())          # ERROR! if a text string or float is input.
     a = collatz(numberA)
     print(" ")
     print("A steps: "+ str(a))
